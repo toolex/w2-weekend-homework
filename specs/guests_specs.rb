@@ -14,7 +14,7 @@ class TestGuest < MiniTest::Test
     @guest6 = Guests.new("Kat")
     @guest7 = Guests.new("Cathy")
     @guests = [@guest1, @guest2, @guest3, @guest4, @guest5, @guest6, @guest7]
-
+    #["Iain", "Bob", "Jim", "Jamie", "Paul", "Kat", "Cathy"]
   end
 
   def test_guest_name

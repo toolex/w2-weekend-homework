@@ -1,5 +1,6 @@
 require("minitest/autorun")
 require("minitest/rg")
+require_relative("../Songs")
 
 class TestSongs < MiniTest::Test
 
@@ -11,9 +12,5 @@ class TestSongs < MiniTest::Test
     @songs = [@song1, @song2, @song3]
 
   end
-
-  # def test_song_title
-  #
-  # end
 
 end
