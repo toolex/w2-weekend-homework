@@ -27,9 +27,26 @@ class TestRooms < MiniTest::Test
     assert_equal(5, @room1.space_in_room)
   end
 
-  # def tets_assign_guest_to_room
-  #
-  # end
+  def test_assign_guest_to_room
+    @room1.assign_guest_to_room(@guest1)
+    assert_equal(4, @room1.space_in_room)
+    assert_equal([@guest1], @room1.guest_in_room)
+  end
+
+  def test_assign_multiple_guests_to_room
+    @room1.assign_guest_to_room(@guest1)
+    @room1.assign_guest_to_room(@guest2)
+    assert_equal(3, @room1.space_in_room)
+    assert_equal([@guest1, @guest2], @room1.guest_in_room)
+  end
+
+  def test_deassign_guest
+    @room1.assign_guest_to_room(@guest1)
+    @room1.assign_guest_to_room(@guest2)
+    @room1.deassign_guest(@guest1)
+    assert_equal(4, @room1.space_in_room)
+    assert_equal([@guest2], @room1.guest_in_room)
+  end
 
 
 
