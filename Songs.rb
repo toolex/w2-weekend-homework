@@ -1,7 +1,7 @@
 class Songs
 
   def initialize(title, artist)
-    @title = tilte
+    @title = title
     @artist = artist
   end
 
