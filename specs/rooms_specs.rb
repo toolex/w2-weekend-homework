@@ -8,13 +8,13 @@ class TestRooms < MiniTest::Test
 
   def setup
 
-    @guest1 = Guests.new("Iain")
-    @guest2 = Guests.new("Bob")
-    @guest3 = Guests.new("Jim")
-    @guest4 = Guests.new("Jamie")
-    @guest5 = Guests.new("Paul")
-    @guest6 = Guests.new("Kat")
-    @guest7 = Guests.new("Cathy")
+    @guest1 = Guests.new("Iain", 20)
+    @guest2 = Guests.new("Bob", 15)
+    @guest3 = Guests.new("Jim", 10)
+    @guest4 = Guests.new("Jamie", 20)
+    @guest5 = Guests.new("Paul", 15)
+    @guest6 = Guests.new("Kat", 10)
+    @guest7 = Guests.new("Cathy", 20)
     @guests = [@guest1, @guest2, @guest3, @guest4, @guest5, @guest6, @guest7]
 
     @room1 = Rooms.new("Room1", 5)
@@ -63,15 +63,15 @@ class TestRooms < MiniTest::Test
     assert_equal([@song1], @room1.song_currently_playing)
   end
 
-  # def test_too_many_guests
-  #   @room1.assign_guest_to_room(@guest1)
-  #   @room1.assign_guest_to_room(@guest2)
-  #   @room1.assign_guest_to_room(@guest3)
-  #   @room1.assign_guest_to_room(@guest4)
-  #   @room1.assign_guest_to_room(@guest5)
-  #   @room1.assign_guest_to_room(@guest6)
-  #   assert_equal(0, @room1.space_in_room)
-  # end
+  def test_too_many_guests
+    @room1.assign_guest_to_room(@guest1)
+    @room1.assign_guest_to_room(@guest2)
+    @room1.assign_guest_to_room(@guest3)
+    @room1.assign_guest_to_room(@guest4)
+    @room1.assign_guest_to_room(@guest5)
+    @room1.assign_guest_to_room(@guest6)
+    assert_equal(0, @room1.space_in_room)
+  end
 
 
 
