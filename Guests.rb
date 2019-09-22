@@ -13,4 +13,8 @@ class Guests
     return @cash
   end
 
+  def book_room(room)
+    @cash -= room.price()
+  end
+
 end

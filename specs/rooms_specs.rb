@@ -17,9 +17,9 @@ class TestRooms < MiniTest::Test
     @guest7 = Guests.new("Cathy", 20)
     @guests = [@guest1, @guest2, @guest3, @guest4, @guest5, @guest6, @guest7]
 
-    @room1 = Rooms.new("Room1", 5)
-    @room2 = Rooms.new("Room2", 6)
-    @room3 = Rooms.new("Room3", 7)
+    @room1 = Rooms.new("Room1", 5, 2)
+    @room2 = Rooms.new("Room2", 6, 3)
+    @room3 = Rooms.new("Room3", 7, 5)
     @rooms = [@room1, @room2, @room3]
 
     @song1 = Songs.new("Master of Puppets", "Metallica")
@@ -73,6 +73,9 @@ class TestRooms < MiniTest::Test
     assert_equal(0, @room1.space_in_room)
   end
 
-
+  # def test_take_cash
+  #   guests_new_cash = @room1.take_cash(@guest1)
+  #   assert_equal(18, guests_new_cash.guest_cash)
+  # end
 
 end

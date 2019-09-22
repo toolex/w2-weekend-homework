@@ -1,10 +1,13 @@
 class Rooms
 
-  def initialize(room_name, capacity)
+  attr_reader :room_name, :capacity, :price
+
+  def initialize(room_name, capacity, price)
     @room_name = room_name
     @capacity = capacity
     @guests_in_room = []
     @current_song = []
+    @price = price
   end
 
   def space_in_room
@@ -36,5 +39,9 @@ class Rooms
   def deassign_song_to_room(song)
     @current_song.delete(song)
   end
+
+  # def take_cash(guest)
+  #   guest.cash -= @price
+  # end
 
 end
